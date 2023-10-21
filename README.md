@@ -24,7 +24,7 @@ chr1:1140435 1 1140435 T G 0.8636767822 0.007174203748000453
 ```
 - **PATH_TO_snp_list** Full path to the directory that contains snp_list file. To align PRSice-2 with SNP, you can use the --print-snp option in PRSice-2 to create a *.snp file, then use e.g.
 ```sh
-awk '{print $2}' *.snp
+awk '{print $2}' *.snp > *.snp_ext
 ```
 If there is no SNP file, you can use nan/nan If specified, an SNP file is created in the SNP_select directory from the specified gwas file, bfile, p_value and r2_value. Note that this creation method does not use LD reference. 
 ```
