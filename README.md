@@ -35,6 +35,7 @@ chr1:1135242
 To align PRSice-2 with SNP, you can use the --print-snp option in PRSice-2 to create a *.snp file, then use e.g.
 ```sh
 awk '{print $2}' *.snp > *.snp_ext
+mv *.snp_ext > Your_working_dir/SNP_select/*.snp_ext
 ```
 If there is no SNP file, the second argument nan/Nan will create an SNP file in the SNP_select directory from the specified gwas file, bfile, p_value and r2_value. Note that this creation method does not use LD reference.
 ```sh
@@ -79,6 +80,7 @@ sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GC
 # Test
 Test uses the run_test.sh file. The basic arguments are: data_folder data_folder_test test_data p_threshold fold_num MHC test_model_num Select_file analysis_date adj_parameter te_samp_max. When specifically using the arguments The following.
 ```sh
+#モデル名修正する
 sh run_test.sh DIS1_TEST_r2_2 DIS1_TEST2_r2_2 GCN_MAT_pheno_SNP_TEST2 "1e-08" 3 Only 2 GCN_MAT_snp_list_r2_02.snp "10-17-2023" 3 10000
 ```
 - **data_folder:** Specify the name of the data folder; if created with the default values of make_mat_for_gcn.sh, the folder name will be DIS1_TEST_r2_2.
