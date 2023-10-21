@@ -60,3 +60,16 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 - **disease_name:** Used as part of the directory part of the directory to be created. Defaults to DIS1.
 - **r2_value:** Used as part of the name of the directory to be created. If Nan/nan is specified in PATH_TO_snp_list, the value specified in this r2_value is entered into plink to create the snp_list. The default value is 2.
 
+# Training & Validation
+Training & Validtaion uses the run_tr_val.sh file. The basic arguments are: data_folder train_val_data p_threshold fold_num analysis_date MHC num_test_model Select_file. When specifically using the arguments The following.
+```sh
+sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 10-17-2023 Only 3 GCN_MAT_snp_list_r2_02.snp
+```
+- **data_folder:** Specify the name of the data folder; if created with the default values of make_mat_for_gcn.sh, the folder name will be DIS1_TEST_r2_2.
+- **train_val_data:** Specify the name of the train_val_data - if it was created with the default value of make_mat_for_gcn.sh, the data GCN_MAT_pheno_SNP_TEST is created in the folder DIS1_TEST_r2_2, so "GCN_MAT_pheno_SNP_TEST" is the argument.
+- **p_threshold:** Multiple p-values can be specified. To specify multiple p-values, enclose the values in "". Example: "1e-07 1e-08".
+- **fold_num:**　k Specifies the value of k for fold cross validation, the same value as the number_of_fold argument in make_mat_for_gcn.sh. Specifically, the sample ID file created in the cv directory in the data_folder is read.
+- **analysis_date:**
+- **MHC:**
+- **num_test_model:**
+- **Select_file:**
