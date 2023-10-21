@@ -57,6 +57,6 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 - **number_of_fold:** Specifies an integer for creating a file for k-fold cross validation. If 0 is specified, no file is created. The default value is 5.
 - **p_value:** Specifies the maximum p-value of SNPs in the created file; it is recommended that a value between 0.01 and 0.05 be specified as large p-values result in very large file sizes. The default value is 0.01.
 - **population:** Used as part of the name of the directory to be created. The default is TEST.
-- **disease_name:** Used as part of the directory part of the directory to be created. Defaults to Disease1.
+- **disease_name:** Used as part of the directory part of the directory to be created. Defaults to DIS1.
 - **r2_value:** Used as part of the name of the directory to be created. If Nan/nan is specified in PATH_TO_snp_list, the value specified in this r2_value is entered into plink to create the snp_list. The default value is 2.
 
