@@ -71,5 +71,22 @@ sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GC
 - **fold_num:**　k Specifies the value of k for fold cross validation, the same value as the number_of_fold argument in make_mat_for_gcn.sh. Specifically, the sample ID file created in the cv directory in the data_folder is read.
 - **MHC:** Choose from Include, Exclude and Only. Include: use all snps, Exclude: exclude MHC resion (chr6:26000000-34000000 /hg19), Only: use only MHC resion (chr6:26000000-34000000 /hg19)
 - **num_test_model:** Number of GCNs you want to build out of the models registered in models.py (__all__). Constructed in order from the top.
-- **Select_file:** Mainly specifies files that have been LD clumped; files generated from PRSice or PLINK are accepted, but also files generated from make_mat_for_gcn.sh.
+- **Select_file:** Mainly specifies files that have been LD clumped; files generated from PRSice or PLINK are accepted, but also files generated from make_mat_for_gcn.sh. If you created the file GCN_MAT_snp_list_r2_02.snp in the SNP_select directory using the default values in make_mat_for_gcn.sh, the argument should be "GCN_MAT_snp_list_r2_02.snp". The argument should be "GCN_MAT_snp_list_r2_02.snp".
 - **analysis_date:** Specifies the date of the analysis. If not stated, today's date is automatically taken as the argument.
+
+# Test
+Test uses the run_test.sh file. The basic arguments are: data_folder data_folder_test test_data p_threshold fold_num MHC test_model_num Select_file analysis_date adj_parameter te_samp_max. When specifically using the arguments The following.
+```sh
+sh run_test.sh DIS1_TEST_r2_2 DIS1_TEST2_r2_2 GCN_MAT_pheno_SNP_TEST2 "1e-08" 3 Only 2 GCN_MAT_snp_list_r2_02.snp "10-17-2023" 3 10000
+```
+- **data_folder:** Specify the name of the data folder; if created with the default values of make_mat_for_gcn.sh, the folder name will be DIS1_TEST_r2_2.
+- **data_folder_test:** Specify the name of the data folder test. It can be created using make_mat_for_gcn.sh, but the SNP must be the same as the file created in Trainig & Validation.
+- **test_data:** Specify the name of the test_data.
+- **p_threshold:** Specify one of the p-values you want in Trainig & Validation Check the rank_list_*.csv created in the data_folder of Trainig & Validation (by default DIS1_TEST_r2_2) to see which model you want to test. Check which models are to be tested. Example: "1e-08".
+- **fold_num:**　k Specifies the value of k for fold cross validation, the same value as the number_of_fold argument in make_mat_for_gcn.sh. Specifically, the sample ID file created in the cv directory in the data_folder is read.
+- **MHC:** Select the arguments used in Training & Validation from Include, Exclude and Only. Include: use all snps, Exclude: exclude MHC resion (chr6:26000000-34000000 /hg19), Only: use only MHC resion (chr6:26000000-34000000 /hg19)
+- **test_model_num:** Enter the number of the model to be tested. The models and numbers correspond to the following. 1:GCN_E2_decline_L2_log_clf1_selu_multi, 2:GCN_E2_decline_L2_div10_clf1_selu_multi, 3:GCN_E2_decline_L2_sqr_clf1_selu_multi, 4:GCN_E2_decline_L3_sqr_clf1_selu_multi, 5:GCN_E2_decline_L4_sqr_clf1_selu_multi, 6:GCN_E2_decline_L5_sqr_clf1_selu_multi, 7:SimpleNN_relu
+- **Select_file:** Mainly specifies files that have been LD clumped; files generated from PRSice or PLINK are accepted, but also files generated from make_mat_for_gcn.sh. Specify the same file as used in Training & Validation.
+- **analysis_date:** Specifies the date of the analysis. If not stated, today's date is automatically taken as the argument. Specify the date when the Training & Validation was carried out.
+- **adj_parameter:** Check the rank_list_*.csv created in the Trainig & Validation data_folder (default: DIS1_TEST_r2_2) for the adj_parameter of the model to be tested. Example: 2.
+- **te_samp_max:** Graph convolutional networks require exponentially more GPU memory as the number of samples or SNPs increases. If GPU memory is insufficient, this argument can be used to reduce the number of samples. In this case, the samples are randomly sampled from data_folder_test.
