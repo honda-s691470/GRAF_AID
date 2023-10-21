@@ -8,7 +8,7 @@ bash make_mat_for_gcn.sh PATH_TO_GWASsumstat PATH_TO_snp_list PATH_TO_plink_bfil
 
 - PATH_TO_GWASsumstat Full path to the directory that contains GWAS sumstat file. The first column is the SNP ID of type chr:position and somewhere in the column must contain a GWAS p-value with column name p/P.
 
-'''
+'''python
 SNP CHR BP A1 A2 P BETA
 chr1:1118275 1 1118275 T C 0.017228570369999998 0.1570892152427751
 chr1:1120431 1 1120431 A G 0.6123953074 -0.020815139713920003
