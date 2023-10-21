@@ -65,6 +65,9 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 
 # Training & Validation
 Training & Validtaion uses the run_tr_val.sh file. The basic arguments are: data_folder train_val_data p_threshold fold_num MHC num_test_model Select_file analysis_date. When specifically using the arguments The following.
+
+#ライブラリに関して記述する
+
 ```sh
 sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GCN_MAT_snp_list_r2_02.snp "10-17-2023"
 ```
