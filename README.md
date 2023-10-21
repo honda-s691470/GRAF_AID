@@ -63,7 +63,7 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 # Training & Validation
 Training & Validtaion uses the run_tr_val.sh file. The basic arguments are: data_folder train_val_data p_threshold fold_num MHC num_test_model Select_file analysis_date. When specifically using the arguments The following.
 ```sh
-sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 10-17-2023 Only 3 GCN_MAT_snp_list_r2_02.snp
+sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GCN_MAT_snp_list_r2_02.snp "10-17-2023"
 ```
 - **data_folder:** Specify the name of the data folder; if created with the default values of make_mat_for_gcn.sh, the folder name will be DIS1_TEST_r2_2.
 - **train_val_data:** Specify the name of the train_val_data - if it was created with the default value of make_mat_for_gcn.sh, the data GCN_MAT_pheno_SNP_TEST is created in the folder DIS1_TEST_r2_2, so "GCN_MAT_pheno_SNP_TEST" is the argument.
