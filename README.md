@@ -12,7 +12,7 @@ conda install -c bioconda datamash
 ```
 The first four arguments (PATH_TO_GWAS_sumstat, PATH_TO_snp_list, PATH_TO_plink_bfile, PATH_TO_phenotype_file) must be entered.
 
-- **PATH_TO_GWAS_sumstat** Full path to the directory that contains GWAS sumstat file. The first column is the SNP ID of type chr:position and somewhere in the column must contain a GWAS p-value with column name p/P.
+- **PATH_TO_GWAS_sumstat:** Full path to the GWAS sumstat file. The first column is the SNP ID of type chr:position and somewhere in the column must contain a GWAS p-value with column name p/P.
 
 ```
 SNP CHR BP A1 A2 P BETA
@@ -22,7 +22,7 @@ chr1:1135242 1 1135242 C A 0.9469519648 0.003992021269537457
 chr1:1140435 1 1140435 T G 0.8636767822 0.007174203748000453
 ...
 ```
-- **PATH_TO_snp_list** Full path to the directory that contains snp_list file.
+- **PATH_TO_snp_list:** Full path to the snp_list file.
 ```
 SNP
 chr1:1118275 
@@ -37,5 +37,20 @@ If there is no SNP file, the second argument nan/Nan will create an SNP file in 
 ```sh
 bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold 0.01 population disease_name 2  
 ```
-
+- **PATH_TO_plink_bfile:** Full path to the plink bfile. No extension required. The second column of the bim file must be of type chr:pos.
+```
+1  chr1:1118275  0  1118275 T C
+1  chr1:1120431  0  1120431 A G
+1  chr1:1135242  0  1135242 C A
+1  chr1:1140435  0  1140435 T G
+...
+```
+- **PATH_TO_phenotype_file:** Full path to the phenotype file. The first column of the phenotype file must be an ID and the second column must be a binary type with 1 as case and 0 as control, or a continuous value.
+```
+001 1
+002 1
+003 0
+004 0
+...
+```
 
