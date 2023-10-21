@@ -1,10 +1,4 @@
 #!/bin/bash
-#SBATCH -n 1
-#SBATCH -p N
-#SBATCH -c 10
-#SBATCH -J sq
-#SBATCH -o stdout.%J
-#SBATCH -e stderr.%J
 
 if [ "$#" -lt 4 ]; then
     echo "Usage: $0 <gwas> <snp_list> <bfile> <pheno_file> [k] [p_val] [population] [disease] [r2]"
