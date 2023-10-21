@@ -12,7 +12,7 @@ pheno_file=$4
 k="${5:-5}"
 p_val="${6:-0.01}"
 population="${7:-TEST}"
-disease="${8:-Disease1}"
+disease="${8:-DIS1}"
 r2="${9:-2}"
 
 mkdir SNP_select
