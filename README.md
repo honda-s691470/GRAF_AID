@@ -3,9 +3,10 @@
 GRAF-AID, short for Graph-based Risk Assessment For Auto Immune Disease, is a tool designed to predict the onset of autoimmune diseases. Utilizing Graph Convolutional Networks (GCN), this model addresses the complexities of the Human Leukocyte Antigen (HLA) region.
 
 # Data preparation
-
+Create a file named GCN_MAT_pheno_SNP_${population} in the directory ${disease}_${population}_r2_${r2} using the following code.
+```sh
 bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat PATH_TO_snp_list PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold p_value population disease_name r2_value  
-
+```
 make_mat_for_gcn.sh uses datamash; if you do not have datamash installed, install it with the following code.
 ```
 conda install -c bioconda datamash
