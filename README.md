@@ -1,4 +1,6 @@
-<div style="text-align: center;"><img src="https://github.com/honda-s691470/GRAF_AID/assets/80377824/3d70c9c8-59d3-4069-bcef-646b9ab1cae2" width="576"></div>
+<div style="text-align: center;">
+  <img src="https://github.com/honda-s691470/GRAF_AID/assets/80377824/3d70c9c8-59d3-4069-bcef-646b9ab1cae2" width="576">
+</div>
 
 # GRAF_AID
 
