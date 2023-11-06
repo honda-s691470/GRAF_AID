@@ -39,7 +39,7 @@ process_gwas_data() {
     }
     NR>1 { print $1, $col_index }' ${gwas} | sort > GWAS_SNP_P
 
-    sort ${snp_list} | join - <(awk -v p=${p_val} '($2 <= p){print $1, $2}' GWAS_SNP_P) > merge_01
+    sort SNP_select/${snp_list} | join - <(awk -v p=${p_val} '($2 <= p){print $1, $2}' GWAS_SNP_P) > merge_01
     echo "finish process_gwas_data"
     rm GWAS_SNP_P
 }
