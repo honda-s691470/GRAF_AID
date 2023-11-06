@@ -11,6 +11,7 @@ GRAF-AID, short for Graph-based Risk Assessment For Auto Immune Disease, is a to
 # Requirements
 - Python 3.x (3.8.12)
 - Pytorch (1.7.1)
+- torchvision (0.8.2)
 - Numpy (1.22.3)
 - Pandas (1.1.3)
 - Scipy (1.7.1)
@@ -83,8 +84,12 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 - **disease_name:** Used as part of the directory part of the directory to be created. Defaults to DIS1.
 
 # Training & Validation
+The following analyses use GPUs. Check that True is returned using the following code.
+```python
+python
+print(torch.cuda.is_available())
+```
 Training & Validtaion uses the run_tr_val.sh file. The basic arguments are: data_folder train_val_data p_threshold fold_num MHC num_test_model Select_file analysis_date. When specifically using the arguments The following.
-
 ```sh
 sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GCN_MAT_snp_list_r2_02.snp "10-17-2023"
 ```
