@@ -22,7 +22,7 @@ cd ./GRAF_AID
 # Data preparation
 Create a file named GCN_MAT_pheno_SNP_${population} in the directory ${disease}_${population}_r2_${r2} using the following code.
 ```sh
-bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat PATH_TO_snp_list PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold p_value population disease_name r2_value  
+bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat PATH_TO_snp_list PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold p_value r2_value population disease_name  
 ```
 make_mat_for_gcn.sh uses datamash; if you do not have datamash installed, install it with the following code.
 ```
@@ -74,9 +74,9 @@ bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_ph
 ```
 - **number_of_fold:** Specifies an integer for creating a file for k-fold cross validation. If 0 is specified, no file is created. The default value is 5.
 - **p_value:** Specifies the maximum p-value of SNPs in the created file; it is recommended that a value between 0.01 and 0.05 be specified as large p-values result in very large file sizes. The default value is 0.01.
+- **r2_value:** Used as part of the name of the directory to be created. If Nan/nan is specified in PATH_TO_snp_list, the value specified in this r2_value is entered into plink to create the snp_list. The default value is 2.
 - **population:** Used as part of the name of the directory to be created. The default is TEST.
 - **disease_name:** Used as part of the directory part of the directory to be created. Defaults to DIS1.
-- **r2_value:** Used as part of the name of the directory to be created. If Nan/nan is specified in PATH_TO_snp_list, the value specified in this r2_value is entered into plink to create the snp_list. The default value is 2.
 
 # Training & Validation
 Training & Validtaion uses the run_tr_val.sh file. The basic arguments are: data_folder train_val_data p_threshold fold_num MHC num_test_model Select_file analysis_date. When specifically using the arguments The following.
@@ -96,7 +96,6 @@ sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GC
 # Test
 Test uses the run_test.sh file. The basic arguments are: data_folder data_folder_test test_data p_threshold fold_num MHC test_model_num Select_file analysis_date adj_parameter te_samp_max. When specifically using the arguments The following.
 ```sh
-#モデル名修正する
 sh run_test.sh DIS1_TEST_r2_2 DIS1_TEST2_r2_2 GCN_MAT_pheno_SNP_TEST2 "1e-08" 3 Only 2 GCN_MAT_snp_list_r2_02.snp "10-17-2023" 3 10000
 ```
 - **data_folder:** Specify the name of the data folder; if created with the default values of make_mat_for_gcn.sh, the folder name will be DIS1_TEST_r2_2.
