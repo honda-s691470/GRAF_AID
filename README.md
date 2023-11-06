@@ -101,7 +101,7 @@ python run_make_prob.py --data_folder 'DIS1_TEST_r2_2' --Select_file "GCN_MAT_sn
 - **data_folder:** Specify the directory analysed in the Training & Validation phase.
 - **Select_file, analysis_date_for_test, MHC:** Specify the same arguments as specified in Training & Validation.
 - **p_threshold, adj_parameter, test_model_num:** First, check the rank_list_*.csv file created in the directory analysed in the Training & Validation phase.　In this file, the constructed models are sorted in order of increasing AUC. For this reason, the arguments adj_parameter, p_threshold and test_model_num are usually entered by reference to the topmost model name in the file.  
-The models and numbers correspond to the following.
+The models and numbers correspond to the following.<br>
 1:GCN_E2_decline_L2_log_clf1_selu_multi<br>
 2:GCN_E2_decline_L2_div10_clf1_selu_multi<br>
 3:GCN_E2_decline_L2_sqr_clf1_selu_multi<br>
