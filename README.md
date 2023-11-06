@@ -1,4 +1,5 @@
-<img src="https://github.com/honda-s691470/GRAF_AID/assets/80377824/3d70c9c8-59d3-4069-bcef-646b9ab1cae2" width="576">
+<div style="text-align: center;"><img src="https://github.com/honda-s691470/GRAF_AID/assets/80377824/3d70c9c8-59d3-4069-bcef-646b9ab1cae2" width="576"></div>
+
 # GRAF_AID
 
 GRAF-AID, short for Graph-based Risk Assessment For Auto Immune Disease, is a tool designed to predict the onset of autoimmune diseases. Utilizing Graph Convolutional Networks (GCN), this model addresses the complexities of the Human Leukocyte Antigen (HLA) region.
