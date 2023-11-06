@@ -50,7 +50,7 @@ chr1:1135242
 To align PRSice-2 with SNP, you can use the --print-snp option in PRSice-2 to create a *.snp file, then use e.g.
 ```sh
 awk '{print $2}' *.snp > *.snp_ext
-mv *.snp_ext > Your_working_dir/SNP_select/*.snp_ext
+mv *.snp_ext > PATH_to_GRAF_AID/GRAF_AID/SNP_select/*.snp_ext
 ```
 If there is no SNP file, the second argument nan/Nan will create an SNP file in the SNP_select directory from the specified gwas file, bfile, p_value and r2_value. Note that this creation method does not use LD reference.
 ```sh
