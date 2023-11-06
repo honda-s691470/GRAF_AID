@@ -44,7 +44,7 @@ chr1:1135242 1 1135242 C A 0.9469519648 0.003992021269537457
 chr1:1140435 1 1140435 T G 0.8636767822 0.007174203748000453
 ...
 ```
-- **PATH_TO_snp_list:** Full path to the snp_list file.
+- **PATH_TO_snp_list:** Specify the name of the snp list file located within the SNP_select directory.
 ```
 SNP
 chr1:1118275 
