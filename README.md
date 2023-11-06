@@ -4,6 +4,20 @@ GRAF-AID, short for Graph-based Risk Assessment For Auto Immune Disease, is a to
 
 <img src="https://github.com/honda-s691470/GRAF_AID/assets/80377824/3d70c9c8-59d3-4069-bcef-646b9ab1cae2" width="288">
 
+# Requirements
+Python 3.x (3.8.12)
+Pytorch (1.7.1)
+Numpy (1.22.3)
+Pandas (1.1.3)
+Scipy (1.7.1)
+Scikit-learn (1.0.2)
+
+# Installation
+clone this repository as folllows.
+```sh
+bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat PATH_TO_snp_list PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold p_value population disease_name r2_value  
+```
+
 # Data preparation
 Create a file named GCN_MAT_pheno_SNP_${population} in the directory ${disease}_${population}_r2_${r2} using the following code.
 ```sh
