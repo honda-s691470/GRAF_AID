@@ -59,7 +59,7 @@ mv *.snp_ext > PATH_to_GRAF_AID/GRAF_AID/SNP_select/*.snp_ext
 ```
 If there is no SNP file, the second argument nan/Nan will create an SNP file in the SNP_select directory from the specified gwas file, bfile, p_value and r2_value. Note that this creation method does not use LD reference.
 ```sh
-bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold 0.01 population disease_name 2  
+bash make_mat_for_gcn.sh PATH_TO_GWAS_sumstat non PATH_TO_plink_bfile PATH_TO_phenotype_file number_of_fold 0.01 2 population disease_name
 ```
 - **PATH_TO_plink_bfile:** Full path to the plink bfile. No extension required. The second column of the bim file must be of type chr:pos.
 ```
