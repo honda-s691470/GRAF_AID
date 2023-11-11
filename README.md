@@ -105,10 +105,10 @@ sh run_tr_val.sh DIS1_TEST_r2_2 GCN_MAT_pheno_SNP_TEST "1e-07 1e-08" 3 Only 3 GC
 # Creating analysis files in Training & Validation
 The code below generates three types of analysis files for both the Training and Validation datasets. These include a file detailing probabilities, a file containing Layer-wise Relevance Propagation (LRP) data, and a file for Graph Convolutional Network (GCN) visualization.An example of the code is as follows,
 ```python
-python run_make_prob.py --data_folder 'DIS1_TEST_r2_2' --Select_file "GCN_MAT_snp_list_r2_02.snp" --analysis_date_for_test '10-17-2023' --MHC 'Only' --p_threshold 1e-07  --adj_parameter 3 --test_model_num 3 
+python run_make_prob.py --data_folder 'DIS1_TEST_r2_2' --Select_file "GCN_MAT_snp_list_r2_02.snp" --analysis_date_for_test '10-17-2023' --MHC 'Only' --fold_num 3 --p_threshold 1e-07  --adj_parameter 3 --test_model_num 3  
 ```
 - **data_folder:** Specify the directory analysed in the Training & Validation phase.
-- **Select_file, analysis_date_for_test, MHC:** Specify the same arguments as specified in Training & Validation.
+- **Select_file, analysis_date_for_test, MHC, fold_num:** Specify the same arguments as specified in Training & Validation.
 - **p_threshold, adj_parameter, test_model_num:** First, check the rank_list_*.csv file created in the directory analysed in the Training & Validation phase.　In this file, the constructed models are sorted in order of increasing AUC. For this reason, the arguments adj_parameter, p_threshold and test_model_num are usually entered by reference to the topmost model name in the file.  
 The models and numbers correspond to the following.<br>
 1:GCN_E2_decline_L2_log_clf1_selu_multi<br>
